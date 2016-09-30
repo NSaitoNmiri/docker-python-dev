@@ -36,7 +36,6 @@ eval echo 'alias conda-activate=\"source ${PYENV_ROOT}/versions/${ANACONDA_VERSI
 eval echo 'alias conda-deactivate=\"source ${PYENV_ROOT}/versions/${ANACONDA_VERSION}/bin/deactivate\"' >> ${_PROFILE}
 echo 'alias activate=conda-activate' >> ${_PROFILE}
 echo 'alias deactivate=conda-deactivate' >> ${_PROFILE}
-#echo 'echo \"In this environment, use \'(de)activatei\' or \'conda-(de)activate\' instead of \'source (de)activate\'\"' ${_PROFILE}
 echo echo \"In this environment, use \\\"\(de\)activate\\\" or \\\"conda-\(de\)activate\\\" instead of \\\"source \(de\)activate\\\"\" >> ${_PROFILE}
 conda update conda
 
