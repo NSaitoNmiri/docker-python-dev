@@ -1,2 +1,2 @@
-FROM nsaitonmiri/docker-project-base-ubuntu:latest
+FROM nsaitonmiri/docker-ubuntu-base
 MAINTAINER Naoki Saito <saito.naoki@nmiri.city.nagoya.jp>
