@@ -5,6 +5,7 @@ set -eu
 #
 PYENV_ROOT="$HOME/.pyenv"
 _PROFILE=$HOME/.profile
+_BASHRC=$HOME/.bashrc
 
 # if ${PYENV_ROOT} directory does not exists, then pyenv is installed.
 echo checking system...
@@ -32,11 +33,11 @@ pyenv install ${ANACONDA_VERSION}
 pyenv rehash
 pyenv global ${ANACONDA_VERSION}
 
-eval echo 'alias conda-activate=\"source ${PYENV_ROOT}/versions/${ANACONDA_VERSION}/bin/activate\"' >> ${_PROFILE}
-eval echo 'alias conda-deactivate=\"source ${PYENV_ROOT}/versions/${ANACONDA_VERSION}/bin/deactivate\"' >> ${_PROFILE}
-echo 'alias activate=conda-activate' >> ${_PROFILE}
-echo 'alias deactivate=conda-deactivate' >> ${_PROFILE}
-echo echo \"In this environment, use \\\"\(de\)activate\\\" or \\\"conda-\(de\)activate\\\" instead of \\\"source \(de\)activate\\\"\" >> ${_PROFILE}
+eval echo 'alias conda-activate=\"source ${PYENV_ROOT}/versions/${ANACONDA_VERSION}/bin/activate\"' >> ${_BASHRC}
+eval echo 'alias conda-deactivate=\"source ${PYENV_ROOT}/versions/${ANACONDA_VERSION}/bin/deactivate\"' >> ${_BASHRC}
+echo 'alias activate=conda-activate' >> ${_BASHRC}
+echo 'alias deactivate=conda-deactivate' >> ${_BASHRC}
+echo echo \"In this environment, use \\\"\(de\)activate\\\" or \\\"conda-\(de\)activate\\\" instead of \\\"source \(de\)activate\\\"\" >> ${_BASHRC}
 conda update conda
 
 exit 0

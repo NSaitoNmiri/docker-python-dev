@@ -1,30 +1,26 @@
-IMAGE_NAME = $(shell basename $(PWD))
-CONTAINER_NAME = $(IMAGE_NAME)_c
+SERVICE_NAME = "python-dev"
 
 all:
-	@echo usage: \"make \{build,run,start,attach,stop,clean_container,clean_image,clean\}\"
+	@echo usage: \"make \{build,up,start,stop,down,exec-bash,ps\}\"
 
 build:
-	docker build -t $(IMAGE_NAME) .
+	docker-compose build
 
-run:
-	docker run -i -t --name="$(CONTAINER_NAME)" $(IMAGE_NAME)
+up:
+	docker-compose up -d
 
 start:
-	docker start $(CONTAINER_NAME)
-
-attach:
-	docker attach $(CONTAINER_NAME)
+	docker-compose start
 
 stop:
-	docker stop $(CONTAINER_NAME)
+	docker-compose stop
 
-clean_container:
-	docker rm $(CONTAINER_NAME)
+down:
+	docker-compose down
 
-clean_image:
-	docker rmi $(IMAGE_NAME)
+exec-bash:
+	docker exec -i -t `docker-compose ps -q "$(SERVICE_NAME)"` bash --login
 
-clean:
-	rm -rf *~
+ps:
+	docker-compose ps
 

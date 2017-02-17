@@ -1,2 +1,2 @@
 # docker-python-dev
-docker project for python development environment based on ubuntu
+a docker project for python development environment based on ubuntu (xenial)
