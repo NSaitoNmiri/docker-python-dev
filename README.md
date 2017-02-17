@@ -44,3 +44,13 @@ a docker project for python development environment based on ubuntu (xenial)
     ```
     make ps
     ```
+## Create a configuration file
+
+Because Ctrl-P is assigned for a part of detach operation, when working with shell, it is necessary to create the file ```~/.docker/config.json``` with the following contents:
+
+```
+{
+	"detachKeys": "ctrl-\\"
+}
+```
+In the above example, "ctrl-\\" can be replaced with other keys as you like.
