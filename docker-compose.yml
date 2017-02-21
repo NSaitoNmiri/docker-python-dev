@@ -7,3 +7,5 @@ services:
         - USER
     stdin_open: true
     tty: true
+    volumes:
+       - ./workdir:/home/${USER}/workdir
