@@ -7,13 +7,13 @@ a docker project for python development environment based on ubuntu (xenial)
     ```
     docker-compose build
     ```
-    If the image is already built, add a "--no-cache" flag to command line.
+    If the image is already built and exists, add a "--no-cache" flag to command line.
     
     ```
     docker-compose build --no-cache
     ```
 
-1. start a container and enter a bash shell in the container (I assume that your current directory is "<somewhere>/docker-python-dev".)
+1. start a container and enter a bash shell in the container (I assume that your current directory is "\<somewhere\>/docker-python-dev".)
 
     ```
     ./start_shell.sh
