@@ -5,45 +5,45 @@ a docker project for python development environment based on ubuntu (xenial)
 1. build image
 
     ```
-    make build
+    docker-compose build
+    ```
+    If the image is already built, add a "--no-cache" flag to command line.
+    
+    ```
+    docker-compose build --no-cache
     ```
 
-1. start container
+1. start a container and enter a bash shell in the container (I assume that your current directory is "<somewhere>/docker-python-dev".)
 
     ```
-    make up
+    ./start_shell.sh
     ```
 
-1. attach container using bash shell
+1. exit from the container 
 
     ```
-    make exec-bash
+    # enter this command in the bash shell
+    exit
     ```
 
-1. stop container
+1. stop container (but the container is not deleted)
 
     ```
-    make stop
+    docker-compose stop
     ```
 
-1. restart container
+1. stop container (and the container is deleted)
 
     ```
-    make start
+    docker-compose down
     ```
 
-1. stop and delete container
+1. list the container in conjunction with this directory
 
     ```
-    make down
+    docker-compose ps
     ```
 
-
-1. list existing containers
-
-    ```
-    make ps
-    ```
 ## Create a configuration file
 
 Because Ctrl-P is assigned for a part of detach operation, when working with shell, it is necessary to create the file ```~/.docker/config.json``` with the following contents:
