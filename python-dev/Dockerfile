@@ -11,7 +11,8 @@ ENV user=${USER:-"developer"}
 RUN echo $user
 RUN adduser --gecos ",,," --disabled-password $user \
     && passwd -d $user \
-    && usermod -G sudo $user
+    && usermod -G sudo $user \
+    && echo $user ALL=NOPASSWD: ALL > /etc/sudoers.d/$user
 ###
 ### run custom scripts
 ###
@@ -24,4 +25,3 @@ RUN chmod +x setup_root.sh setup_user.sh \
 USER $user
 WORKDIR /home/$user
 RUN /tmp/setup_user.sh
-
