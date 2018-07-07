@@ -6,6 +6,8 @@ services:
       args:
         - USER
     stdin_open: true
+    ports:
+     - "8888:8888"
     tty: true
     volumes:
        - ./workdir:/home/${USER}/workdir
